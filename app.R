@@ -59,7 +59,8 @@ server <- function(input, output) {
              up, down, left or right. X shows your current position
              You cant walk over walls which are shown with #
              after each move the game will tell you if you are getting
-             closer (Hot) or further (cold)", type = "info")
+             closer (Hot) or further (cold)", type = "info", className = "welcome", animation=TRUE,
+             confirmButtonCol = "#001219")
   
   #initialize game when play pressed
   observeEvent(input$play, {

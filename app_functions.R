@@ -146,17 +146,17 @@ get_game_grid <- function(nrow, ncol, n_walls, debug = FALSE) {
   }
   
   if(debug == FALSE) {
-    game_grid[target_coord[1], target_coord[2]] <- '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Intens_scale_present_2.png/640px-Intens_scale_present_2.png" style="display:flex; max-width:30%; height:auto" />'
+    game_grid[target_coord[1], target_coord[2]] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/cell.png?token=GHSAT0AAAAAACA3QKPUZFUCKG5MFC2BZCHUZDN2QXQ" style="display:flex; max-width:30%; height:auto" />'
   }
   
-  game_grid[start_coord[1], start_coord[2]] <- '<img src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/256/man-icon.png" style="display:flex; max-width:30%; height:auto" />'
+  game_grid[start_coord[1], start_coord[2]] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/player.png?token=GHSAT0AAAAAACA3QKPVS6EZXZYYPMVDX2QUZDN2P7A" style="display:flex; max-width:30%; height:auto" />'
   
   
   for(i in walls_coords) {
-    game_grid[i[1],i[2]] <- '<img src="https://simg.nicepng.com/png/small/22-227890_brick-wall-bricks-construction-wall-bricks-png.png" style="height:auto; width:auto; display:flex; max-width:30%; height:auto" />'
+    game_grid[i[1],i[2]] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/wall.png?token=GHSAT0AAAAAACA3QKPVDJORGQPJGPP2J4NMZDN2SXQ" style="height:auto; width:auto; display:flex; max-width:30%; height:auto" />'
   }
   
-  game_grid[game_grid=="-"] <- '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Intens_scale_present_2.png/640px-Intens_scale_present_2.png" style="display:flex; max-width:30%; height:auto" />'
+  game_grid[game_grid=="-"] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/cell.png?token=GHSAT0AAAAAACA3QKPUZFUCKG5MFC2BZCHUZDN2QXQ" style="display:flex; max-width:30%; height:auto" />'
   
   #set current coordinates
   current_coord <- start_coord
@@ -240,9 +240,9 @@ make_move <- function(h, add, game_state) {
   
   
   #update grid and coords
-  game_grid[current_coord[1], current_coord[2]] <- '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Intens_scale_present_2.png/640px-Intens_scale_present_2.png" style="display:flex; max-width:30%; height:auto" />'
+  game_grid[current_coord[1], current_coord[2]] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/cell.png?token=GHSAT0AAAAAACA3QKPUZFUCKG5MFC2BZCHUZDN2QXQ" style="display:flex; max-width:30%; height:auto" />'
   current_coord[h] <- current_coord[h] + add
-  game_grid[current_coord[1], current_coord[2]] <- '<img src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/256/man-icon.png" style="display:flex; max-width:30%; height:auto" />'
+  game_grid[current_coord[1], current_coord[2]] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/player.png?token=GHSAT0AAAAAACA3QKPVS6EZXZYYPMVDX2QUZDN2P7A" style="display:flex; max-width:30%; height:auto" />'
   
   #update distance and number of moves
   new_distance <- sum(abs(target_coord[1] - current_coord[1]),abs(target_coord[2] - current_coord[2]))

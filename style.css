@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
 
 *{
-  font-family: "VT323";
+  font-family: "Share Tech Mono";
   color: #66FF00;
   background-color: #001219;
+}
+
+h2{
+  font-size: 5em;
 }
 
 body{
@@ -15,12 +19,14 @@ body{
   color: #66FF00;
   background-color: #001219;
   border-color: #66FF00;
+  font-size: 2.5em;
 }
 
 .form-control{
   color: #66FF00;
   background-color: #001219;
   border-color: #66FF00;
+    font-size: 1em;
 }
 
 .btn{
@@ -33,9 +39,24 @@ body{
   background-color: #ef233c;
 }
 
+.welcome{
+  color: #66FF00;
+  background-color: #001219;
+  font-size: 1.5em;
+}
+
+.confirm{
+  color: #66FF00;
+  background-color: #001219;
+  !important;
+}
+
 table{
   table-layout: fixed;
   max-height: 100%;
   padding-top: 100%;
 }
 
+#matrix td, tr{
+  border-color: #001219;
+}
