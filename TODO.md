@@ -15,7 +15,10 @@
 	2.4 DONE Define winning conditions and winning message
 
 ## 3. Styling & theming
-	3.1 Make the game grid a flex box with buttons appearing under the box
+	3.1 DONE Make the game grid a flex box with buttons appearing under the box
+		3.1.1 DONE Make the table adjust to the screen
+		3.1.2 DONE Adjust cell size to have fixed size of cells
+		3.1.3 Find own/CC images for walls, player and free cells
 	3.2 Define fonts that would look good
 	3.3 define colors: what color theme would be best?
 
