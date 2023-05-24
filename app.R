@@ -10,33 +10,26 @@
 library(shiny)
 library(shinyalert)
 library(tableHTML)
+library(bslib)
 source('app_functions.R')
 options(xtable.type = 'html')
+includeCSS("style.css")
 # Define UI for application that draws a histogram
 ui <- fluidPage(
     # Application title
     titlePanel("Hot and cold"),
-    tags$head(tags$style(HTML('#matrix table {
-                               width: 200px;
-                             }
-                             #matrix th {
-                              height: 50px;
-                             }
-                             #matrix td:first-child {
-                               width: 50px;
-                             }'))),
-
+    tags$link(rel ="stylesheet",type="text/css", href="style.css"),
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
             numericInput("nrow", "Number of rows", value = 5, min = 0, max = 20),
-            numericInput("ncol", "Number of clumns", value = 5, min = 0, max = 20),
+            numericInput("ncol", "Number of columns", value = 5, min = 0, max = 20),
             numericInput("walls", "Number of walls", value = 1, min = 0, max = 50),
             actionButton("play", "PLAY!", class = "btn-lg btn-success")
         ),
 
         # Show a plot of the generated distribution
-        mainPanel(fillRow(
+        mainPanel(fluidRow(
           tableOutput("matrix"),
           tags$head(tags$style(type = "text/css", "#matrix th {display:none;}"))
           ),
@@ -69,7 +62,7 @@ server <- function(input, output) {
     current_coord <<- game_state$current_coord
     output$matrix <- renderTable({
       game_grid <- game_state$game_grid 
-    }, sanitize.text.function = function(x) x)
+    }, sanitize.text.function = function(x) x, width = "100%")
   })
 
   #Define movements when buttons are pressed
