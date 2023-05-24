@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+
+*{
+  font-family: "VT323";
+  color: #66FF00;
+  background-color: #001219;
+}
+
+body{
+  color: #66FF00;
+  background-color: #001219;
+}
+
+#sidebar{ 
+  color: #66FF00;
+  background-color: #001219;
+  border-color: #66FF00;
+}
+
+.form-control{
+  color: #66FF00;
+  background-color: #001219;
+  border-color: #66FF00;
+}
+
+.btn{
+  color: #66FF00;
+  background-color: #001219;
+}
+
+.btn:hover{
+  color: #66FF00;
+  background-color: #ef233c;
+}
+
+table{
+  table-layout: fixed;
+  max-height: 100%;
+  padding-top: 100%;
+}
+

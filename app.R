@@ -13,36 +13,41 @@ library(tableHTML)
 library(bslib)
 source('app_functions.R')
 options(xtable.type = 'html')
-includeCSS("style.css")
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
+  
+ 
+  
+  
     # Application title
     titlePanel("Hot and cold"),
-    tags$link(rel ="stylesheet",type="text/css", href="style.css"),
-    # Sidebar with a slider input for number of bins 
-    sidebarLayout(
-        sidebarPanel(
-            numericInput("nrow", "Number of rows", value = 5, min = 0, max = 20),
-            numericInput("ncol", "Number of columns", value = 5, min = 0, max = 20),
-            numericInput("walls", "Number of walls", value = 1, min = 0, max = 50),
+    includeCSS("style.css"), #this works and includes the css though inly font changed...
+    
+        sidebarLayout(
+          #trying to wrap in a div to set background color for sideb
+          
+          sidebarPanel(id="sidebar",
+            numericInput("nrow", "Number of rows", value = 5, min = 1, max = 20),
+            numericInput("ncol", "Number of columns", value = 5, min = 1, max = 20),
+            numericInput("walls", "Number of walls", value = 1, min = 1, max = 50),
             actionButton("play", "PLAY!", class = "btn-lg btn-success")
-        ),
-
-        # Show a plot of the generated distribution
-        mainPanel(fluidRow(
-          tableOutput("matrix"),
-          tags$head(tags$style(type = "text/css", "#matrix th {display:none;}"))
           ),
-        mainPanel(
+          mainPanel(fluidRow(
+            tableOutput("matrix"),
+            tags$head(tags$style(type = "text/css", "#matrix th {display:none;}"))
+          ),
+          fluidRow(
             actionButton("left", "LEFT", class = "btn-lg btn-success"),
             actionButton("up", "UP", class = "btn-lg btn-success"),
             actionButton("down", "DOWN", class = "btn-lg btn-success"),
             actionButton("right", "RIGHT", class = "btn-lg btn-success")
-          ) #remove columns names
+          )
+          
+          
+           )
         
-           
-        )
-    )
+    )    
 )
 
 # Define server logic required to draw a histogram

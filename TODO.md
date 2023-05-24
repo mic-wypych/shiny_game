@@ -12,6 +12,7 @@
 	2.1 DONE  Render the game grid using nwalls, ncol and nrow inputs after the button is pressed; Using all the checks; the function should return also other states of the game (start and target coords, n moves and distances)
 	2.2 DONE Define functions for the movements. Each function should run when appropriate button is pressed
 	2.3 DONE calculate distances and create output with message
+		2.3.1 Change distance to euclidean (Manhattan is too easy)
 	2.4 DONE Define winning conditions and winning message
 
 ## 3. Styling & theming
@@ -25,3 +26,5 @@
 ## 4. Deploy!
 	4.1 DONE github it
 	4.2 deploy via shinyapps? Netlify?
+	
+## 5. Clean the code
