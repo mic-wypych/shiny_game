@@ -131,7 +131,7 @@ get_game_grid <- function(nrow, ncol, n_walls, debug = FALSE) {
   
   bfs_result <- find_path(game_grid)
   
-  while(!bfs_result) {
+  while(!bfs_result | (list(target_coord) %in% walls_coords) | (list(start_coord) %in% walls_coords)) {
     #regenerate walls
     walls_coords <- create_walls()
     game_grid <- matrix(rep('-', nrow*ncol), nrow = nrow, ncol = ncol)
@@ -146,24 +146,26 @@ get_game_grid <- function(nrow, ncol, n_walls, debug = FALSE) {
   }
   
   if(debug == FALSE) {
-    game_grid[target_coord[1], target_coord[2]] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/cell.png?token=GHSAT0AAAAAACA3QKPUZFUCKG5MFC2BZCHUZDN2QXQ" style="display:flex; max-width:30%; height:auto" />'
+    game_grid[target_coord[1], target_coord[2]] <- '<img src="cell.png" style="display:flex; max-width:50%; height:auto" />'
   }
   
-  game_grid[start_coord[1], start_coord[2]] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/player.png?token=GHSAT0AAAAAACA3QKPVS6EZXZYYPMVDX2QUZDN2P7A" style="display:flex; max-width:30%; height:auto" />'
+  game_grid[start_coord[1], start_coord[2]] <- '<img src="player.png" style="display:flex; max-width:30%; height:auto" />'
   
   
   for(i in walls_coords) {
-    game_grid[i[1],i[2]] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/wall.png?token=GHSAT0AAAAAACA3QKPVDJORGQPJGPP2J4NMZDN2SXQ" style="height:auto; width:auto; display:flex; max-width:30%; height:auto" />'
+    game_grid[i[1],i[2]] <- '<img src="wall.png" style="height:auto; width:auto; display:flex; max-width:50%; height:auto" />'
   }
   
-  game_grid[game_grid=="-"] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/cell.png?token=GHSAT0AAAAAACA3QKPUZFUCKG5MFC2BZCHUZDN2QXQ" style="display:flex; max-width:30%; height:auto" />'
+  game_grid[game_grid=="-"] <- '<img src="cell.png" style="display:flex; max-width:50%; height:auto" />'
   
   #set current coordinates
   current_coord <- start_coord
   
   #calculate distance as Manhattan
   
-  old_distance <- sum(abs(target_coord[1] - current_coord[1]),abs(target_coord[2] - current_coord[2]))
+ 
+  
+  old_distance <- sqrt((target_coord[1] - current_coord[1])**2 + (target_coord[2] - current_coord[2])**2)
   
   #initiate move counter
   
@@ -240,12 +242,12 @@ make_move <- function(h, add, game_state) {
   
   
   #update grid and coords
-  game_grid[current_coord[1], current_coord[2]] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/cell.png?token=GHSAT0AAAAAACA3QKPUZFUCKG5MFC2BZCHUZDN2QXQ" style="display:flex; max-width:30%; height:auto" />'
+  game_grid[current_coord[1], current_coord[2]] <- '<img src="cell.png" style="display:flex; max-width:30%; height:auto" />'
   current_coord[h] <- current_coord[h] + add
-  game_grid[current_coord[1], current_coord[2]] <- '<img src="https://raw.githubusercontent.com/Honestiore/shiny_game/main/player.png?token=GHSAT0AAAAAACA3QKPVS6EZXZYYPMVDX2QUZDN2P7A" style="display:flex; max-width:30%; height:auto" />'
+  game_grid[current_coord[1], current_coord[2]] <- '<img src="player.png" style="display:flex; max-width:30%; height:auto" />'
   
   #update distance and number of moves
-  new_distance <- sum(abs(target_coord[1] - current_coord[1]),abs(target_coord[2] - current_coord[2]))
+  new_distance <- sqrt((target_coord[1] - current_coord[1])**2 + (target_coord[2] - current_coord[2])**2)
   n_moves <- n_moves + 1
   
   #display message

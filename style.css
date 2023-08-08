@@ -35,7 +35,7 @@ body{
 }
 
 .btn:hover{
-  color: #66FF00;
+  color: #ef233c;
   background-color: #ef233c;
 }
 
@@ -54,9 +54,21 @@ body{
 table{
   table-layout: fixed;
   max-height: 100%;
-  padding-top: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
 }
 
-#matrix td, tr{
-  border-color: #001219;
+#matrix td {
+  border-color: #66FF00;
+  aspect-ratio: 1 / 1;
+  padding: 0px; 
+  margin: 0px; 
+  border: 0px;
+  align-content: center;
+}
+img {
+   max-width:100%;
+   vertical-align: bottom;
+   height:auto;
+   display:block;
 }

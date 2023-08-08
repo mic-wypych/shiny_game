@@ -17,11 +17,20 @@
 
 ## 3. Styling & theming
 	3.1 DONE Make the game grid a flex box with buttons appearing under the box
-		3.1.1 DONE Make the table adjust to the screen
-		3.1.2 DONE Adjust cell size to have fixed size of cells
-		3.1.3 Find own/CC images for walls, player and free cells
-	3.2 Define fonts that would look good
-	3.3 define colors: what color theme would be best?
+		3.1.1 Make the table adjust to the screen
+		3.1.2 Adjust cell size to have fixed size of cells; there is still a problem with
+		the ratio of height to width
+		3.1.3 DONE Find own/CC images for walls, player and free cells
+	3.2 DONE Define fonts that would look good
+	3.3 DONE Define colors: what color theme would be best?
+	
+## 3.5 DEBUG
+  3.5.1 DONE tHE BFS breaks at high number of walls - something is off with it (
+  problem was due to 3.5.2)
+  3.5.2 DONE There were a few cases where the player render invisible first and then
+  I could not move over the start position - an overlap of player and
+  wall - the check for overlap was done before BFS so BFS could overwrite it.
+  Fixed but the game generation is extremely slow with high dimensions and many walls
 
 ## 4. Deploy!
 	4.1 DONE github it
