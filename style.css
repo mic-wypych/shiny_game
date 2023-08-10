@@ -45,10 +45,29 @@ body{
   font-size: 1.5em;
 }
 
+.win{
+  font-family: "Share Tech Mono";
+  color: #66FF00;
+  background-color: #001219;
+  font-size: 1.5em;
+}
+
+.alert{
+  color: #66FF00;
+  background-color: #001219;
+  !important;
+}
+
 .confirm{
   color: #66FF00;
   background-color: #001219;
   !important;
+}
+
+.shiny-notification{
+  font-family: "Share Tech Mono";
+  color: #66FF00;
+  background-color: #001219;
 }
 
 table{

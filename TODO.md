@@ -17,7 +17,7 @@
 
 ## 3. Styling & theming
 	3.1 DONE Make the game grid a flex box with buttons appearing under the box
-		3.1.1 Make the table adjust to the screen
+		3.1.1 DONE Make the table adjust to the screen
 		3.1.2 Adjust cell size to have fixed size of cells; there is still a problem with
 		the ratio of height to width
 		3.1.3 DONE Find own/CC images for walls, player and free cells

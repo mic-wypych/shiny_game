@@ -81,7 +81,8 @@ server <- function(input, output) {
     }, sanitize.text.function = function(x) x)
     if ((target_coord[1] == current_coord[1] & target_coord[2] == current_coord[2])) {
       shinyalert(paste0("Congratulations!
-                      You found the treasure in", game_state$n_moves, ' moves'),type = "success")
+                      You found the treasure in ", game_state$n_moves, ' moves'),type = "info",
+                 confirmButtonCol = "#001219", className = "win")
     }
     
   })
@@ -95,7 +96,8 @@ server <- function(input, output) {
     }, sanitize.text.function = function(x) x)
     if ((target_coord[1] == current_coord[1] & target_coord[2] == current_coord[2])) {
       shinyalert(paste0("Congratulations!
-                      You found the treasure in", game_state$n_moves, ' moves'),type = "success")
+                      You found the treasure in ", game_state$n_moves, ' moves'),type = "info",
+                 confirmButtonCol = "#001219", className = "win")
     }
 
   })
@@ -109,7 +111,8 @@ server <- function(input, output) {
     }, sanitize.text.function = function(x) x)
     if ((target_coord[1] == current_coord[1] & target_coord[2] == current_coord[2])) {
       shinyalert(paste0("Congratulations!
-                      You found the treasure in", game_state$n_moves, ' moves'),type = "success")
+                      You found the treasure in ", game_state$n_moves, ' moves'),type = "info",
+                 confirmButtonCol = "#001219", className = "win")
     }
 
   })
@@ -123,7 +126,8 @@ server <- function(input, output) {
     }, sanitize.text.function = function(x) x)
     if ((target_coord[1] == current_coord[1] & target_coord[2] == current_coord[2])) {
       shinyalert(paste0("Congratulations!
-                      You found the treasure in ", game_state$n_moves, ' moves'), type = "success")
+                      You found the treasure in ", game_state$n_moves, ' moves'), type = "info",
+                 confirmButtonCol = "#001219", className = "win")
     }
 
   })
