@@ -74,8 +74,9 @@ table{
   table-layout:fixed;
   height: 90%;
   width: 90%;
-  border-collapse: collapse;
-  border-spacing:0;
+  border-style: solid;
+  border-color: #66FF00;
+  
 }
 
 #matrix td {
