@@ -25,7 +25,6 @@ ui <- fluidPage(
     includeCSS("style.css"), #this works and includes the css though inly font changed...
     
         sidebarLayout(
-          #trying to wrap in a div to set background color for sideb
           
           sidebarPanel(id="sidebar",
             numericInput("nrow", "Number of rows", value = 5, min = 1, max = 20),
@@ -33,10 +32,8 @@ ui <- fluidPage(
             numericInput("walls", "Number of walls", value = 1, min = 1, max = 50),
             actionButton("play", "PLAY!", class = "btn-lg btn-success")
           ),
-          mainPanel(fluidRow(
+          mainPanel(
             tableOutput("matrix"),
-            tags$head(tags$style(type = "text/css", "#matrix th {display:none;}"))
-          ),
           fluidRow(
             actionButton("left", "LEFT", class = "btn-lg btn-success"),
             actionButton("up", "UP", class = "btn-lg btn-success"),

@@ -35,8 +35,8 @@ body{
 }
 
 .btn:hover{
-  color: #ef233c;
-  background-color: #ef233c;
+  color: #66FF00;
+  background-color: #264653;
 }
 
 .welcome{
@@ -71,20 +71,28 @@ body{
 }
 
 table{
-  table-layout: fixed;
-  max-height: 100%;
-  max-width: 100%;
+  table-layout:fixed;
+  height: 90%;
+  width: 90%;
   border-collapse: collapse;
+  border-spacing:0;
 }
 
 #matrix td {
   border-color: #66FF00;
   aspect-ratio: 1 / 1;
+  max-height: 100%;
+  max-width: 100%;
   padding: 0px; 
   margin: 0px; 
   border: 0px;
   align-content: center;
 }
+
+#matrix th {
+  display: none;
+}
+
 img {
    max-width:100%;
    vertical-align: bottom;
