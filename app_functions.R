@@ -149,7 +149,12 @@ get_game_grid <- function(nrow, ncol, n_walls, debug = FALSE) {
     game_grid[target_coord[1], target_coord[2]] <- '<img src="cell.png" style="display:flex; max-width:100%; height:auto" />'
   }
   
-  game_grid[start_coord[1], start_coord[2]] <- '<img src="player.png" style="display:flex; max-width:100%; height:auto" />'
+  
+  # player icon was adapted from https://commons.wikimedia.org/wiki/File:Running_icon_-_Noun_Project_17825.svg
+  # which is listed under Creative Commons 3.0 attribution license.
+  # Attribution goes to Dillon Arloff, from The Noun Project.
+  # The original icon was resized, had colors changed and the three horizontal lines deleted
+  game_grid[start_coord[1], start_coord[2]] <- '<img src="player2.png" style="display:flex; max-width:100%; height:auto" />'
   
   
   for(i in walls_coords) {
@@ -244,7 +249,7 @@ make_move <- function(h, add, game_state) {
   #update grid and coords
   game_grid[current_coord[1], current_coord[2]] <- '<img src="cell.png" style="display:flex; max-width:100%; height:auto" />'
   current_coord[h] <- current_coord[h] + add
-  game_grid[current_coord[1], current_coord[2]] <- '<img src="player.png" style="display:flex; max-width:100%; height:auto" />'
+  game_grid[current_coord[1], current_coord[2]] <- '<img src="player2.png" style="display:flex; max-width:100%; height:auto" />'
   
   #update distance and number of moves
   new_distance <- sqrt((target_coord[1] - current_coord[1])**2 + (target_coord[2] - current_coord[2])**2)

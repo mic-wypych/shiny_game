@@ -51,12 +51,7 @@ ui <- fluidPage(
 server <- function(input, output) {
   
   #Welcome message and rules
-  shinyalert("Welcome", "Hey hi hello! This is a hot & cold game\nThe rules are:
-             You have to find the treasure. You can move by pressing
-             up, down, left or right. X shows your current position
-             You cant walk over walls which are shown with #
-             after each move the game will tell you if you are getting
-             closer (Hot) or further (cold)", type = "info", className = "welcome", animation=TRUE,
+  shinyalert("Welcome", "This is a hot & cold game\nThe rules are: You have to find the treasure.\nYou can move by pressing up, down, left or right.\nHuman icon shows your current position\nYou cant walk over walls.\nafter each move the game will tell you if you are getting closer (Hot) or further (cold)", type = "info", className = "welcome", animation=TRUE,
              confirmButtonCol = "#001219")
   
   #initialize game when play pressed
