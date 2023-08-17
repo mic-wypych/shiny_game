@@ -39,3 +39,5 @@
 	4.2 deploy via shinyapps? Netlify?
 	
 ## 5. Clean the code
+
+Game deployed at https://honestiore.shinyapps.io/shiny_game/

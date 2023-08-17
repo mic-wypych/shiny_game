@@ -1,0 +1,10 @@
+name: shiny_game
+title:
+username: honestiore
+account: honestiore
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9585446
+bundleId: 7553147
+url: https://honestiore.shinyapps.io/shiny_game/
+version: 1
