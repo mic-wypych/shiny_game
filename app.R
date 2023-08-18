@@ -21,12 +21,12 @@ ui <- fluidPage(
   
   
     # Application title
-    titlePanel("Hot and cold"),
     includeCSS("style.css"), #this works and includes the css though inly font changed...
     
         sidebarLayout(
           
           sidebarPanel(id="sidebar",
+            shiny::h1("Hot and cold"),
             numericInput("nrow", "Number of rows", value = 5, min = 1, max = 20),
             numericInput("ncol", "Number of columns", value = 5, min = 1, max = 20),
             numericInput("walls", "Number of walls", value = 1, min = 1, max = 50),
